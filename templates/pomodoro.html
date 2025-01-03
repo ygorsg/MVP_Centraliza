@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <header class="titulo">
+        <h1>Projeto Timer Pomodoro</h1>
+    </header>
+
+    <main>
+        <div class="menu">
+            <label for="tempoTrabalho">Digite o tempo de ação:</label>
+            <input type="number" id="tempoTrabalho" min="1" placeholder="Minutos" required>
+            <button id="startButton"onclick="registrarValores()">Salvar</button> <!-- divir entre botao de salvar data e de iniciar -->
+            <br>
+            <label for="tempoDescanso">Digite o tempo de descanso:</label>
+            <input type="number" id="tempoDescanso" min="1" placeholder="Minutos" required>
+            <br>
+            <button id="pausePlayButton" onclick="pausePlayTimer()">Play</button>
+        </div>
+
+        <div class="timer">
+            <h1 id = "displayTempo">00:00</h1>
+        </div>
+
+
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
