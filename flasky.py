@@ -40,6 +40,10 @@ def visualizar_tarefas():
 def home():
     return render_template("pomodoro.html")
 
+@app.route('/calendario')
+def calendario():
+    return render_template('calendario.html')
+
 # Inicialização do Banco de Dados e Execução do Servidor
 if __name__ == '__main__':
     with app.app_context():
