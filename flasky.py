@@ -44,6 +44,22 @@ def home():
 def calendario():
     return render_template('calendario.html')
 
+@app.route('/api/events')
+def get_events():
+    # Example static events, replace with database query if needed
+    events = [
+        {
+            'title': 'Event 1',
+            'start': '2023-10-01'
+        },
+        {
+            'title': 'Event 2',
+            'start': '2023-10-05',
+            'end': '2023-10-07'
+        }
+    ]
+    return jsonify(events)
+
 # Inicialização do Banco de Dados e Execução do Servidor
 if __name__ == '__main__':
     with app.app_context():
